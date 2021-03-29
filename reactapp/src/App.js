@@ -1,6 +1,8 @@
 import './App.css';
 
-  addItem = async(e) => {
+function App() {
+  let addItem;
+  addItem = async (e) => {
     e.preventDefault();
     const newItem = this.state.currentItem;
     if (newItem.title !== '') {
@@ -11,30 +13,32 @@ import './App.css';
           'User-Agent': 'todo',
         },
         body: JSON.stringify({title: newItem.title}),
-        method:'POST'
+        method: 'POST'
       });
       const json = await response.json();
       const items = this.state.items;
       items.unshift(json);
-      this.setState({ items: items });
+      this.setState({items: items});
       this.inputElement.value = '';
     }
   }
 
-render() {
-  return (
-    <div>
-      <input
-          placeholder="Submit todo"
-          ref={c => {
-            this.inputElement = c;
-          }}
-          value={this.state.currentItem.text}
-          onChange={this.handleInput}
-      />
-      <button onClick={this.addItem}>Add Task</button>
-    </div>
-  );
+  render()
+  {
+    return (
+        <div>
+          <input
+              placeholder="Submit todo"
+              ref={c => {
+                this.inputElement = c;
+              }}
+              value={this.state.currentItem.text}
+              onChange={this.handleInput}
+          />
+          <button onClick={this.addItem}>Add Task</button>
+        </div>
+    );
+  }
 }
 
 export default App;
