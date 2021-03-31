@@ -1,7 +1,6 @@
 {
   "name": "reactapp",
   "version": "0.1.0",
-  "private": true,
   "main": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
@@ -43,7 +42,7 @@
     "babel-loader": "^6.2.2",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
-    "react-hot-loader": "^1.3.0",
+    "react-hot-loader": "^4.13.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
   }
