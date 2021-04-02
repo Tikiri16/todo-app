@@ -28,7 +28,7 @@ export default class TodosList extends React.Component {
                         type="text"
                         onChange={this.handleChange}
                         placeholder="submit a task"
-                        value={this.state.name}
+                        value={this.state.task}
                     />
 
                     <button type="submit">Submit</button>
@@ -61,7 +61,7 @@ export default class TodosList extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        const task = this.state;
+        const task = this.state.task;
         await axios.post(
             'https://kdp2eooeia.execute-api.us-east-2.amazonaws.com/default/serverlessAppFunction',
             { key1: `${task}` }
